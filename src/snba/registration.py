@@ -171,17 +171,26 @@ with st.container(border=True):
         )
 
     photo = st.file_uploader(
-        "Upload Student Photograph *",
+        "Upload Student Photograph * (Less than 5 MB)",
         type=["jpg", "jpeg", "png"],
         key="photo",
     )
 
+    MAX_PHOTO_SIZE = 5 * 1024 * 1024  # 5 MB
+
     if photo:
-        st.image(
-            photo,
-            caption="Student Photograph",
-            width=180,
-        )
+        if photo.size >= MAX_PHOTO_SIZE:
+            st.error(
+                "❌ Photo size must be less than 5 MB. "
+                "Please re-upload a smaller photograph."
+            )
+            photo = None
+        else:
+            st.image(
+                photo,
+                caption="Student Photograph",
+                width=180,
+            )
 
 
 # ==================================================
