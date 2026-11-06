@@ -258,49 +258,50 @@ for display_number, achievement_id in enumerate(
             key=f"result_{achievement_id}",
         )
 
-        INDIAN_CITIES = {
-            "Andhra Pradesh": [
-                "Visakhapatnam",
-                "Vijayawada",
-                "Guntur",
-                "Tirupati",
-                "Kurnool",
-            ],
-            "Telangana": [
-                "Hyderabad",
-                "Warangal",
-                "Karimnagar",
-                "Nizamabad",
-            ],
-            "Karnataka": [
-                "Bengaluru",
-                "Mysuru",
-                "Mangaluru",
-                "Hubballi",
-            ],
-            "Tamil Nadu": [
-                "Chennai",
-                "Coimbatore",
-                "Madurai",
-                "Salem",
-            ],
-            "Maharashtra": [
-                "Mumbai",
-                "Pune",
-                "Nagpur",
-                "Nashik",
-            ],
-        }
+        # ==================================================
+        # COMPETITION LOCATION
+        # ==================================================
+
+        INDIAN_STATES = [
+            "Andhra Pradesh",
+            "Arunachal Pradesh",
+            "Assam",
+            "Bihar",
+            "Chhattisgarh",
+            "Goa",
+            "Gujarat",
+            "Haryana",
+            "Himachal Pradesh",
+            "Jharkhand",
+            "Karnataka",
+            "Kerala",
+            "Madhya Pradesh",
+            "Maharashtra",
+            "Manipur",
+            "Meghalaya",
+            "Mizoram",
+            "Nagaland",
+            "Odisha",
+            "Punjab",
+            "Rajasthan",
+            "Sikkim",
+            "Tamil Nadu",
+            "Telangana",
+            "Tripura",
+            "Uttar Pradesh",
+            "Uttarakhand",
+            "West Bengal",
+        ]
 
         state = st.selectbox(
             "Competition State",
-            options=list(INDIAN_CITIES.keys()),
+            options=INDIAN_STATES,
             key=f"state_{achievement_id}",
         )
 
-        city = st.selectbox(
+        city = st.text_input(
             "Competition City",
-            options=INDIAN_CITIES[state],
+            placeholder="Enter competition city",
             key=f"city_{achievement_id}",
         )
 

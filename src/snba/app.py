@@ -7,14 +7,20 @@ registration_page = st.Page(
     default=True,
 )
 
-player_page = st.Page(
+players_page = st.Page(
     "player.py",
     title="Registered Players",
     url_path="player",
 )
 
+admin_page = st.Page(
+    "admin.py",
+    title="Admin",
+    url_path="admin",
+)
+
 pg = st.navigation(
-    [registration_page, player_page],
+    [registration_page, players_page,admin_page],
     position="hidden",
 )
 
